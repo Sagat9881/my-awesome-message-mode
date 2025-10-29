@@ -71,6 +71,7 @@ public class MyMessageScreen extends Screen {
                         new MyC2SMessage(
                                 ClientMessageOuterClass.ClientMessage.newBuilder()
                                         .setText(message)
+                                        .setPlayerId(client.player.getUuid().toString())
                                         .build())
                 );
                 LOGGER.debug("Отправлено сообщение: {}", message);

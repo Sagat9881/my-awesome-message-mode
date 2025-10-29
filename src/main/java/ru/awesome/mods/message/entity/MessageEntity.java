@@ -9,16 +9,27 @@ import java.util.UUID;
 @Table(name = "message")
 public class MessageEntity implements Serializable {
     @Id
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name = "player_id")
+    private UUID playerId;
 
     private String text;
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    public UUID getPlayerId() {
+        return playerId;
+    }
+
+    public void setPlayerId(UUID playerId) {
+        this.playerId = playerId;
     }
 
     public String getText() {

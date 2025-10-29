@@ -21,7 +21,7 @@ public class MessageServiceImpl implements MessageService{
             session.beginTransaction();
             MessageEntity messageEntity = new MessageEntity();
             messageEntity.setText(protobufMessage.getText());
-            messageEntity.setId(UUID.randomUUID());
+            messageEntity.setPlayerId(UUID.fromString(protobufMessage.getPlayerId()));
             session.persist(messageEntity);
             session.getTransaction().commit();
 

@@ -5,4 +5,5 @@ package  ru.awesome.mods.message.dto;
 message Message
 {
   string text = 1;
+  string player = 2;
 }
