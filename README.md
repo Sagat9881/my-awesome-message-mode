@@ -22,7 +22,7 @@
 ## Сборка и запуск без IDE
 
 ### Шаг 1: Клонирование репозитория
-bash git clone https://github.com/ваше-имя/ваш-проект.git cd ваш-проект
+bash git clone https://github.com/Sagat9881/my-awesome-message-mode cd my-awesome-message-mode
 ### Шаг 2: Установка зависимостей
 bash ./gradlew build
 Эта команда скачает все необходимые библиотеки, включая:
@@ -41,7 +41,7 @@ bash ./gradlew runClient
 ## Сборка и запуск через Docker Compose
 
 ### Шаг 1: Клонирование репозитория
-bash git clone https://github.com/ваше-имя/ваш-проект.git cd ваш-проект
+bash git clone https://github.com/Sagat9881/my-awesome-message-mode cd my-awesome-message-mode
 ### Шаг 2: Сборка и запуск контейнеров
 bash docker-compose up --build
 > ⚠️ Первый запуск может занять некоторое время, так как будет происходить загрузка образов и сборка проекта.
@@ -72,7 +72,6 @@ bash docker-compose up --build
 Все `.proto` файлы должны находиться в следующих директориях:
 
 - `src/main/resources/protobuf/`
-- `src/client/resources/protobuf/`
 
 При сборке они будут автоматически скомпилированы в Java-классы с помощью `protobuf-java`.
 
