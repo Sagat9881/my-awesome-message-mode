@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+
+  server:
+    build: .
+    image: minecraft-fabric-server
+    container_name: minecraft-server
+    ports:
+      - "25565:25565"  # Порт сервера Minecraft
+    volumes:
+      - ./server-data:/workspace/server
+    environment:
+      - MC_VERSION=1.20.1
+      - FABRIC_LOADER_VERSION=0.15.10
+    working_dir: /workspace
+    command: ["./gradlew", "runServer", "--server", "--dir", "/workspace/server"]

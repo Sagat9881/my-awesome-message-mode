@@ -1,0 +1,22 @@
+<hibernate-configuration>
+    <session-factory>
+        <!-- Соединение с базой данных -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/postgres</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">postgres</property>
+
+        <!-- Автообновление схемы -->
+        <property name="hbm2ddl.auto">validate</property>
+        <property name="hibernate.ddl-auto">validate</property>
+
+        <!-- Покажем SQL-запросы в консоли -->
+        <property name="show_sql">true</property>
+
+        <!-- Включаем форматирование SQL-запросов -->
+        <property name="format_sql">true</property>
+
+<!--        &lt;!&ndash; Модели сущностей &ndash;&gt;-->
+<!--        <mapping class="ru.awesome.mods.message.entity.MessageEntity"/>-->
+    </session-factory>
+</hibernate-configuration>

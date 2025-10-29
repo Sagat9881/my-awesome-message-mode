@@ -1,0 +1,7 @@
+syntax = "proto3";
+package ru.awesome.mods.message.dto;
+
+message ClientMessage
+{
+  string text = 1;
+}
