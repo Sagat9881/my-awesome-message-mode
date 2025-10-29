@@ -11,7 +11,7 @@ import ru.awesome.mods.message.dto.ClientMessageOuterClass;
 import ru.awesome.mods.message.dto.MyC2SMessage;
 
 public class MyMessageScreen extends Screen {
-    public static final MyMessageScreen SCREEN = new MyMessageScreen(Text.literal("Отправка сообщения!"));
+    public static final MyMessageScreen SCREEN = new MyMessageScreen(Text.literal("Send Message"));
     private TextFieldWidget textField;
     private ButtonWidget sendButton;
 
@@ -44,7 +44,7 @@ public class MyMessageScreen extends Screen {
 
         // Создаём кнопку отправки
         this.sendButton = ButtonWidget.builder(
-                        Text.literal("Отправить"),
+                        Text.literal("Send Message"),
                         (button) -> {
                             sendMessage();
                             close();
@@ -71,10 +71,10 @@ public class MyMessageScreen extends Screen {
                         new MyC2SMessage(
                                 ClientMessageOuterClass.ClientMessage.newBuilder()
                                         .setText(message)
-                                        .setPlayerId(client.player.getUuid().toString())
-                                        .build())
+                                        .build()
+                        )
                 );
-                LOGGER.debug("Отправлено сообщение: {}", message);
+                LOGGER.debug("Message sent: {}", message);
             }
         }
     }
